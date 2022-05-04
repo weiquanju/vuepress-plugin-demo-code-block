@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-demo-code-block",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Vuepress2 plugin for demo block support vue3.",
   "main": "src/index.js",
   "files": [
@@ -25,7 +25,9 @@
     "vuepress",
     "vuepress2",
     "demo",
-    "block"
+    "block",
+    "code",
+    "tsx"
   ],
   "author": "seepine",
   "license": "MIT",
