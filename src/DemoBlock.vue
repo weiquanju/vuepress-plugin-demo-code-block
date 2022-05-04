@@ -139,7 +139,7 @@ onMounted(() => {
     transition: all .3s;
 
     &.showCode {
-      max-height: 100vh;
+      max-height: 999999999vh;
     }
   }
 
