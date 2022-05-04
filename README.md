@@ -4,7 +4,7 @@
 
 support: vuepress2, vue3, github edit online, tsx
 
-### 安装 Install
+## 安装 Install
 
 ```shell
 npm i -D vuepress-plugin-demo-code-block
@@ -14,7 +14,7 @@ yarn add -D vuepress-plugin-demo-code-block
 pnpm add -D vuepress-plugin-demo-code-block
 ```
 
-### 配置 Config
+## 配置 Config
 
 配置文件： `docs/.vuepress/config.ts`
 
@@ -38,7 +38,7 @@ export default defineUserConfig({
 ```
 
 
-### 使用 Usage
+## 使用 Usage
 
 路径: `docs/examples` 里创建`Hello.vue`
 
@@ -56,13 +56,13 @@ Hello
 :::
 ```
 
-#### 截图 Screenshot
+### 截图 Screenshot
 
 ![Hello.vue example show](https://github.com/weiquanju/vuepress-plugin-demo-code-block/raw/main/.docs/hello.png?1)
 
 ![Hello.vue example show](https://github.com/weiquanju/vuepress-plugin-demo-code-block/raw/main/.docs/hello_open.png?1)
 
-### VuePress with tsx
+## VuePress with tsx
 
 项目配置参考如下
 
