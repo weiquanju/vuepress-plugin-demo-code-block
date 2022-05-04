@@ -9,7 +9,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "http://a.b.git"
+    "url": "https://github.com/weiquanju/vuepress-plugin-demo-code"
   },
   "devDependencies": {
     "escape-html": "1.0.3",
@@ -30,7 +30,7 @@
   "author": "seepine",
   "license": "MIT",
   "bugs": {
-    "url": "http://a.b/issues"
+    "url": "https://github.com/weiquanju/vuepress-plugin-demo-code/issues"
   },
-  "homepage": "http://a.b"
+  "homepage": "https://github.com/weiquanju/vuepress-plugin-demo-code/issues"
 }
