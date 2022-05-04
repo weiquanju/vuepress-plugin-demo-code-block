@@ -1,6 +1,7 @@
 ## vuepress plugin demo code block
 
 支持：vuepress2，vue3，github在线编辑，tsx
+
 support: vuepress2, vue3, github edit online, tsx
 
 ### 安装 Install
@@ -16,6 +17,7 @@ pnpm add -D vuepress-plugin-demo-code-block
 ### 配置 Config
 
 配置文件： `docs/.vuepress/config.ts`
+
 Configuration file: `docs/.vuepress/config.ts`
 
 ```ts
@@ -39,6 +41,7 @@ export default defineUserConfig({
 ### 使用 Usage
 
 路径: `docs/examples` 里创建`Hello.vue`
+
 Create `Hello.vue` in  path of `docs/examples` 
 
 ```vue
@@ -62,6 +65,7 @@ Hello
 ### VuePress with tsx
 
 项目配置参考如下
+
 The project configuration reference is as follows
 
 `tsconfig.json`
