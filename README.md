@@ -55,9 +55,9 @@ Hello
 
 #### 截图 Screenshot
 
-![Hello.vue example show](.docs/hello.png?1)
+![Hello.vue example show](https://github.com/weiquanju/vuepress-plugin-demo-code-block/raw/main/.docs/hello.png?1)
 
-![Hello.vue example show](.docs/hello_open.png?1)
+![Hello.vue example show](https://github.com/weiquanju/vuepress-plugin-demo-code-block/raw/main/.docs/hello_open.png?1)
 
 ### VuePress with tsx
 
