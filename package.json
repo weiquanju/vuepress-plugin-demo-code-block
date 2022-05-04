@@ -1,5 +1,5 @@
 {
-  "name": "vuepress-plugin-demo-code",
+  "name": "vuepress-plugin-demo-code-block",
   "version": "1.0.3",
   "description": "Vuepress2 plugin for demo block support vue3.",
   "main": "src/index.js",
@@ -9,7 +9,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/weiquanju/vuepress-plugin-demo-code"
+    "url": "https://github.com/weiquanju/vuepress-plugin-demo-code-block"
   },
   "devDependencies": {
     "escape-html": "1.0.3",
@@ -30,7 +30,7 @@
   "author": "seepine",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/weiquanju/vuepress-plugin-demo-code/issues"
+    "url": "https://github.com/weiquanju/vuepress-plugin-demo-code-block/issues"
   },
-  "homepage": "https://github.com/weiquanju/vuepress-plugin-demo-code/issues"
+  "homepage": "https://github.com/weiquanju/vuepress-plugin-demo-code-block/issues"
 }
