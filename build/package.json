@@ -1,5 +1,6 @@
 {
   "name": "vuepress-plugin-demo-code-block",
+  "version": "1.0.9",
   "description": "Vuepress2 plugin for demo block support vue3.",
   "repository": {
     "type": "git",
@@ -23,30 +24,36 @@
     "url": "https://github.com/weiquanju/vuepress-plugin-demo-code-block/issues"
   },
   "homepage": "https://github.com/weiquanju/vuepress-plugin-demo-code-block/issues",
-  "scripts": {
-    "build": "vite build && node build/index.mjs"
+  "files": [
+    "./*",
+    "./**/*"
+  ],
+  "main": "./index.cjs",
+  "module": "./index.mjs",
+  "style": "style.css",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "types": "./index.d.ts",
+      "require": "./index.cjs"
+    }
   },
   "dependencies": {
-    "@vuepress/utils": "2.0.0-rc.2",
     "escape-html": "^1.0.3",
-    "markdown-it-container": "^4.0.0",
-    "vue": "^3.4.21",
-    "vuepress": "2.0.0-rc.8"
+    "markdown-it-container": "^4.0.0"
   },
   "devDependencies": {
-    "@tsconfig/node20": "^20.1.2",
-    "@types/escape-html": "^1.0.4",
-    "@types/markdown-it-container": "^2.0.9",
-    "@types/node": "^20.11.10",
-    "@types/prismjs": "^1.26.3",
-    "@vitejs/plugin-vue": "^5.0.3",
-    "@vitejs/plugin-vue-jsx": "^3.1.0",
-    "@vue/tsconfig": "^0.5.1",
     "chalk": "^5.3.0",
     "chokidar": "^3.6.0",
     "markdown-it": "^14.0.0",
     "prismjs": "^1.29.0",
-    "typescript": "^5.3.3",
     "vite": "^5.1.4"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0",
+    "vuepress": "2.0.0-rc.8",
+    "@vuepress/bundler-vite": "2.0.0-rc.8",
+    "@vuepress/bundler-webpack": "2.0.0-rc.8",
+    "@vuepress/utils": "2.0.0-rc.8"
   }
 }

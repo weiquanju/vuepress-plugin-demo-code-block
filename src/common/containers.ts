@@ -1,11 +1,17 @@
-let mdContainer = require("markdown-it-container");
-const MarkdownIt = require("markdown-it");
-const localMd = MarkdownIt();
-const fs = require("fs");
-const path = require("path");
-const highlight = require("./highlight");
+import mdContainer from "markdown-it-container";
+import MarkdownIt from "markdown-it";
+import fs from "node:fs";
+import path from "path";
+import highlight from "./highlight";
+interface Options {
+  component: string;
+  componentsDir: string;
+  getComponentName: (sourceFile: string) => string;
+  githubEditLinkPath: string;
+}
 
-module.exports = (options) => {
+export default (options: Options) => {
+  const localMd = MarkdownIt();
   const { component = "demo-block", componentsDir, getComponentName } = options;
   const componentName = component
     .replace(/^\S/, (s) => s.toLowerCase())
@@ -38,8 +44,8 @@ module.exports = (options) => {
           }
           const cptName = getComponentName(sourceFile);
 
-          const { code, lang } = highlight(source, "vue")
-          const githubLink = `${options.githubEditLinkPath}${sourceFile}.vue`
+          const { code, lang } = highlight(source, "vue");
+          const githubLink = `${options.githubEditLinkPath}${sourceFile}.vue`;
 
           const encodeOptionsStr = encodeURI(JSON.stringify(options));
           let result = `<${componentName} componentName="${cptName}" :options="JSON.parse(decodeURI('${encodeOptionsStr}'))"

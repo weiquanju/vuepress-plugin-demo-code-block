@@ -1,13 +1,11 @@
 // ref https://github.com/vuejs/vitepress/blob/main/src/node/markdown/plugins/highlight.ts
-const escapeHtml = require("escape-html");
-const prism = require("prismjs");
-const chalk = require("chalk");
-
-// prism is listed as actual dep so it's ok to require
-const loadLanguages = require("prismjs/components/index");
+import escapeHtml from "escape-html";
+import { highlight, languages } from "prismjs";
+import chalk from "chalk";
+import loadLanguages from "prismjs/components/index";
 
 // required to make embedded highlighting work...
-loadLanguages(["markup", "css", "javascript"]);
+loadLanguages(["markup", "css", "javascript", "typescript", "python"]);
 
 function wrap(code, lang) {
   if (lang === "text") {
@@ -16,7 +14,7 @@ function wrap(code, lang) {
   return { code, lang };
 }
 
-module.exports = (str, lang) => {
+export default (str, lang) => {
   if (!lang) {
     return wrap(str, "text");
   }
@@ -34,7 +32,7 @@ module.exports = (str, lang) => {
   if (lang === "py") {
     lang = "python";
   }
-  if (!prism.languages[lang]) {
+  if (!languages[lang]) {
     try {
       loadLanguages([lang]);
     } catch (e) {
@@ -46,8 +44,8 @@ module.exports = (str, lang) => {
       );
     }
   }
-  if (prism.languages[lang]) {
-    const code = prism.highlight(str, prism.languages[lang], lang);
+  if (languages[lang]) {
+    const code = highlight(str, languages[lang], lang);
     return wrap(code, rawLang);
   }
   return wrap(str, "text");

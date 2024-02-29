@@ -1,6 +1,6 @@
 <template>
   <div class="demo-block">
-    <Message v-bind="message" v-model:visible="message.visible"/>
+    <Message v-bind="message" v-model:visible="message.visible" />
     <div class="demo-content">
       <component :is="componentName" v-if="componentName" v-bind="$attrs" />
     </div>
@@ -26,8 +26,8 @@
 
 <script lang="ts" setup>
 import { writeToClipboard } from './copy';
-import defaultLang from './i18n/default_lang.json';
-import { getCurrentInstance, reactive, ref, onMounted } from "vue";
+// import defaultLang from './i18n/default_lang.json';
+import { reactive, ref, onMounted } from "vue";
 import {
   Code,
   Copy,
@@ -53,7 +53,7 @@ const state = reactive({
 
 const link = decode(props.githubLink)
 
-const refCode = ref<HTMLDivElement>(null)
+const refCode = ref < HTMLDivElement > ()
 
 const message = reactive({
   msg: '复制成功',
@@ -66,11 +66,11 @@ const copyHandler = async () => {
   const msg: string | undefined = await writeToClipboard(decode(props.source))
   if (typeof msg !== 'undefined') {
     message.msg = '复制失败:' + msg
-    message.type =  'error'
+    message.type = 'error'
     message.visible = true
   } else {
     message.msg = '复制成功'
-    message.type =  'success'
+    message.type = 'success'
     message.visible = true
   }
 }
@@ -80,12 +80,11 @@ onMounted(() => {
   if (!document.body.dataset.copyListener) {
     document.body.dataset.copyListener = 'true'
     document.addEventListener('copy', function (e) {
-      if (clipboard.value) {
-        e.clipboardData.setData('text/html', clipboard.value.toString());
-      }
+      // if (clipboard.value) {
+      //   e.clipboardData.setData('text/html', clipboard.value.toString());
+      // }
     });
   }
-
 })
 
 </script>
@@ -114,7 +113,9 @@ onMounted(() => {
       padding: 1em 0.618em;
       cursor: pointer;
       color: var(--c-text-lightest);
-      &:hover,&:active {
+
+      &:hover,
+      &:active {
         color: var(--c-text-accent);
       }
     }
