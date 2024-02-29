@@ -3,31 +3,31 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 
-const transFileName = (format, entryName) => {
-  const map: Record<string, "cjs" | "mjs"> = {
-    commonjs: "cjs",
-    cjs: "cjs",
-    es: "mjs",
-    esm: "mjs",
-  };
-  if (entryName === "index") {
-    return `${entryName}.${map[format]}`;
-  } else {
-    return `${entryName}/index.${map[format]}`;
-  }
-};
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
+    target: 'modules',
     sourcemap: true,
     outDir: "dist",
     lib: {
       entry: {
         index: fileURLToPath(new URL("./src/index.ts", import.meta.url)),
       },
-      name: "v-el-table",
+      name: "vuepress-plugin-demo-code-block",
       formats: ["es", "cjs"],
-      fileName: transFileName,
+      fileName: (format, entryName) => {
+        const map: Record<string, "cjs" | "mjs"> = {
+          commonjs: "cjs",
+          cjs: "cjs",
+          es: "mjs",
+          esm: "mjs",
+        };
+        if (entryName === "index") {
+          return `${entryName}.${map[format]}`;
+        } else {
+          return `${entryName}/index.${map[format]}`;
+        }
+      },
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖

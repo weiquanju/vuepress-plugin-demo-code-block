@@ -31,6 +31,8 @@ const version = '1.0.10'
             log(`write err: ${e}`)
         })
 
-        shell('cp src/index.d.ts dist/')
+        await shell('cp src/index.d.ts dist/')
+        // await shell('rm -fr ../../packages/vuepress-plugin-demo-code-block')
+        shell('mv -f dist ../../packages/vuepress-plugin-demo-code-block')
         shell('echo ok')
     })();
